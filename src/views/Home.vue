@@ -1,30 +1,32 @@
 <template>
-    <v-container fluid fill-height class="home-hero">
-        <v-layout justify-center align-left column pa-5>
-            <div class="heading display-4 font-weight-black white--text text-xs-center">HEALTHY MEALS</div>
-            <div class="heading display-4 font-weight-black white--text text-xs-center mb-3">FOR YOUR TABLE</div>
-            <div class="display-1 font-weight-bold white--text text-xs-center">Finally be a foodie at home with fresh, chef-prepared meals delivered daily to your door.</div>
-            <v-btn fab class="mt-5 brown darken-4">
-            <v-icon large color="white">mdi-heart</v-icon>
-            </v-btn>
-        </v-layout>
-    </v-container>
+    <span>
+        <home-hero></home-hero>
+        <home-about></home-about>
+        <home-contact></home-contact> 
+    </span>
 </template>
 
 <script>
-export default {
-    name: 'HomeHero'
-};
+    import HomeHero from '@/components/HomeHero';
+    import HomeAbout from '@/components/HomeAbout';
+    import HomeContact from '@/components/HomeContact';
+
+    export default {
+        name: 'Home',
+        components: {
+            HomeHero,
+            HomeAbout,
+            HomeContact
+        }
+    };
 </script>
 
-<style scoped>
-.home-hero {
-    background: url('http://source.unsplash.com/0BhSKStVtdM');
-    background-size: cover;
+<style>
+    .arrow-down {
+        transition: all 0.5s ease-in-out;
+    }
 
-}
-
-.heading {
-  text-shadow: 2px 2px 3px rgba(33,33,33,0.5);
-}
+    .arrow-down:hover {
+        color: rgba(0, 0, 0, 0.75) !important;
+    }
 </style>
